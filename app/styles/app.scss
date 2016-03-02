@@ -4,6 +4,8 @@ $font-family: 'Raleway', Helvetica, sans-serif !default;
 $primary: "indigo" !default;
 $default-color: "900" !default;
 
+$letter: url('images/letter-paper.jpg');
+
 @import 'ember-paper';
 
 .main-content {
@@ -16,31 +18,49 @@ $default-color: "900" !default;
   }
 }
 
+.card-overlay {
+  margin: 10px;
+}
+
 .letter-background {
   height: 600px;
   width: 100%;
   position: relative;
   overflow: hidden;
-  background: rgba(155, 155, 155, 0.2);
+  opacity: 0.5;
+  background-image: $letter;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.letter-text {
+  border: 10px solid;
+  z-index: 1;
+  opacity: 1;
 }
 
 
 .letter-background:after {
-  content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0.6;
-    background-image: url('images/letter-paper.jpg');
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    -ms-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    background-size: cover;
+  // content: ' ';
+  // display: block;
+  // position: absolute;
+  // left: 0;
+  // top: 0;
+  // width: 100%;
+  // // height: 100%;
+  // z-index: 1;
+  // opacity: 0.5;
+  // background-image: $letter;
+  // background-repeat: no-repeat;
+  // background-position: 50% 0;
+  // -ms-background-size: cover;
+  // -o-background-size: cover;
+  // -moz-background-size: cover;
+  // -webkit-background-size: cover;
+  // background-size: cover;
 }

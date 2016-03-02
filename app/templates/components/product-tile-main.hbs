@@ -1,0 +1,15 @@
+{{#paper-card}}
+  {{log model.mainProduct}}
+  {{log model.otherProducts}}
+  <div class="letter-background">
+    <div class="letter-text">
+      <p class="card-overlay">
+        Some buttons and text
+      </p>
+    </div>
+  </div>
+
+  {{#paper-card-content}}
+    <p>{{model.mainProduct.name}} content</p>
+  {{/paper-card-content}}
+{{/paper-card}}
