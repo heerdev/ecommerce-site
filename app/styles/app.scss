@@ -5,6 +5,8 @@ $primary: "indigo" !default;
 $default-color: "900" !default;
 
 $letter: url('images/letter-paper.jpg');
+$legal: url('images/legal-paper.jpg');
+$envelope: url('images/envelopes.jpg');
 
 @import 'ember-paper';
 
@@ -20,6 +22,9 @@ $letter: url('images/letter-paper.jpg');
 
 .card-overlay {
   margin: 10px;
+  color: white;
+  z-index: 1;
+  font-weight: bolder;
 }
 
 .letter-background {
@@ -37,8 +42,8 @@ $letter: url('images/letter-paper.jpg');
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  opacity: 0.5;
+  z-index: 0;
+  // opacity: 0.5;
   background-image: $letter;
   background-repeat: no-repeat;
   background-position: 50% 0;
@@ -65,8 +70,8 @@ $letter: url('images/letter-paper.jpg');
   width: 100%;
   height: 100%;
   z-index: 1;
-  opacity: 0.5;
-  background-image: $letter;
+  // opacity: 0.5;
+  background-image: $legal;
   background-repeat: no-repeat;
   background-position: 50% 0;
   -ms-background-size: cover;
@@ -92,8 +97,8 @@ $letter: url('images/letter-paper.jpg');
   width: 100%;
   height: 100%;
   z-index: 1;
-  opacity: 0.5;
-  background-image: $letter;
+  // opacity: 0.5;
+  background-image: $envelope;
   background-repeat: no-repeat;
   background-position: 50% 0;
   -ms-background-size: cover;

@@ -1,26 +1,20 @@
+
 {{#paper-card}}
-  <div class="letter-background">
-    <p class="card-overlay">
-      Some buttons and text
-    </p>
-  </div>
+  {{#link-to 'product' model.bestProduct.id}}<div class="letter-background"></div>{{/link-to}}
 
   {{#paper-card-content}}
-  {{log model}}
-    <p>{{model.bestProduct.name}} content</p>
+    <h1>{{model.bestProduct.name}} size paper</h1>
+    <p>{{model.bestProduct.main_description}}</p>
   {{/paper-card-content}}
 {{/paper-card}}
 
 <div layout-gt-md="row">
   {{#each model.allProducts as |product|}}
     {{#paper-card flex="49"}}
-      <div class="{{product.name}}">
-        <p class="card-overlay">
-          Some buttons and text
-        </p>
-      </div>
+      {{#link-to 'product' product.id}}<div class="{{product.name}}"></div>{{/link-to}}
       {{#paper-card-content}}
-        <p>{{product.name}} content</p>
+      <h1>{{product.name}} size paper</h1>
+      <p>{{product.main_description}}</p>
       {{/paper-card-content}}
     {{/paper-card}}
   {{/each}}

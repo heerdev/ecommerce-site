@@ -1,0 +1,9 @@
+<h1>{{product.name}}</h1>
+{{#if case}}
+  <h3>{{format-price product.case.price}}/{{product.case.name}}</h3>
+  {{else}}
+  <h3>{{format-price product.unit.price}}/{{product.unit.name}}</h3>
+{{/if}}
+{{paper-divider}}
+{{#paper-switch checked=weightSelect}} {{weight}} {{/paper-switch}}
+{{#paper-switch checked=caseSelected}} {{unit}} {{/paper-switch}}
