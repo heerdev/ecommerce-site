@@ -1,5 +1,5 @@
 <h1>{{product.name}}</h1>
-{{#if case}}
+{{#if unit}}
   <h3>{{format-price product.case.price}}/{{product.case.name}}</h3>
   {{else}}
   <h3>{{format-price product.unit.price}}/{{product.unit.name}}</h3>
@@ -7,3 +7,13 @@
 {{paper-divider}}
 {{#paper-switch checked=weightSelect}} {{weight}} {{/paper-switch}}
 {{#paper-switch checked=caseSelected}} {{unit}} {{/paper-switch}}
+{{paper-divider}}
+
+Quantity
+{{#paper-button icon-button=true action="decrementQuantity"}}{{paper-icon "remove"}}{{/paper-button}}
+{{quantity}}
+{{#paper-button icon-button=true action="incrementQuantity"}}{{paper-icon "add"}}{{/paper-button}}
+
+{{paper-divider}}
+
+{{#paper-button raised=true primary=true action="addToCart"}}Add to Cart{{/paper-button}}

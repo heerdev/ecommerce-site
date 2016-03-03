@@ -1,25 +1,55 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  case: true,
+  shoppingCart: Ember.inject.service(),
+
+  quantity: 1,
 
   weight: Ember.computed('weightSelect', function() {
     if (this.get('weightSelect')) {
-      return "Standard";
-    } else {
       return "Cardstock";
+    } else {
+      return "Standard Weight";
     }
   }),
 
   unit: Ember.computed('caseSelected', function() {
     if (this.get('caseSelected')) {
-      this.set('case', true);
-      console.log(this.get("case"));
       return this.get('product.case.name');
     } else {
-      this.set('case', false);
-      console.log(this.get("case"));
       return this.get('product.unit.name');
     }
   }),
+
+  actions: {
+    incrementQuantity() {
+      this.incrementProperty('quantity');
+    },
+
+    decrementQuantity() {
+      if (this.get('quantity') > 1) {
+        this.decrementProperty('quantity');
+      }
+    },
+
+    addToCart() {
+      var purchase = {
+        product: this.get('product'),
+        quantity: this.get('quantity'),
+        weight: this.get('weight'),
+      };
+
+      if (this.get('caseSelected')) {
+        purchase.unit = this.get('product.case.name');
+        purchase.price = this.get('product.case.price') * this.get('quantity');
+      } else {
+        purchase.unit = this.get('product.unit.name');
+        purchase.price = this.get('product.unit.price') * this.get('quantity');
+      }
+
+      console.log(purchase);
+      this.get('shoppingCart').addToCart(purchase);
+    }
+
+  }
 });

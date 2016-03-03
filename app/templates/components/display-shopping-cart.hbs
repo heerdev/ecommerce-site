@@ -1,0 +1,7 @@
+{{#each shoppingCart.items as |purchase|}}
+  <ul>
+    <li>{{purchase.product.name}}</li>
+    <li>{{purchase.quantity}} {{pluralizer purchase.quantity purchase.unit}} of {{purchase.weight}}</li>
+    <li>{{format-price purchase.price}}</li>
+  </ul>
+{{/each}}
