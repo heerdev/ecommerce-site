@@ -10,11 +10,14 @@
 
     {{#paper-content}}
       {{#paper-list}}
-        {{#paper-item action="transitionTo" param="index"}}Letter{{/paper-item}}
-        {{#paper-item action="transitionTo" param="index"}}Legal{{/paper-item}}
-        {{#paper-item action="transitionTo" param="index"}}#10 Envelopes{{/paper-item}}
+        {{#paper-item action='goToProduct' param=model.bestProduct.id}}{{model.bestProduct.name}}{{/paper-item}}
+        {{#each model.allProducts as |product|}}
+          {{#paper-item action='goToProduct' param=product.id}}{{product.name}}{{/paper-item}}
+        {{/each}}
+        {{paper-divider}}
+        <br>
+        {{#paper-item}}{{shopping-cart-summary}}{{/paper-item}}
       {{/paper-list}}
-      {{paper-divider}}
     {{/paper-content}}
   {{/paper-sidenav}}
 

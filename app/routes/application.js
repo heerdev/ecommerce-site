@@ -7,10 +7,4 @@ export default Ember.Route.extend({
       allProducts: this.store.query('product', {limitToLast: 2})
     });
   },
-
-  actions: {
-    goToProduct(id) {
-      this.transitionTo('product', id);
-    }
-  }
 });

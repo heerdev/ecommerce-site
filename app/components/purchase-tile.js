@@ -5,6 +5,10 @@ export default Ember.Component.extend({
 
   quantity: 1,
 
+  init() {
+    this._super(...arguments);
+  },
+
   weight: Ember.computed('weightSelect', function() {
     if (this.get('weightSelect')) {
       return "Cardstock";
@@ -18,6 +22,14 @@ export default Ember.Component.extend({
       return this.get('product.case.name');
     } else {
       return this.get('product.unit.name');
+    }
+  }),
+
+  case_chosen: Ember.computed('caseSelected', function() {
+    if (this.get('caseSelected')) {
+      return true;
+    } else {
+      return false;
     }
   }),
 
@@ -47,8 +59,10 @@ export default Ember.Component.extend({
         purchase.price = this.get('product.unit.price') * this.get('quantity');
       }
 
-      console.log(purchase);
       this.get('shoppingCart').addToCart(purchase);
+      this.set('quantity', 1);
+      this.set('caseSelected', false);
+      this.set('weightSelect', false);
     }
 
   }
