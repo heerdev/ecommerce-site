@@ -8,12 +8,11 @@
 {{#paper-switch checked=weightSelect}} {{weight}} {{/paper-switch}}
 {{#paper-switch checked=caseSelected}} {{unit}} {{/paper-switch}}
 {{paper-divider}}
-
-Quantity
-{{#paper-button icon-button=true action="decrementQuantity"}}{{paper-icon "remove"}}{{/paper-button}}
-{{quantity}}
-{{#paper-button icon-button=true action="incrementQuantity"}}{{paper-icon "add"}}{{/paper-button}}
-
+<p>
+Quantity&nbsp;{{#paper-button icon-button=true action="decrementQuantity"}}{{paper-icon "remove"}}{{/paper-button}}
+&nbsp;{{quantity}}&nbsp;{{#paper-button icon-button=true action="incrementQuantity"}}{{paper-icon "add"}}{{/paper-button}}
+</p>
 {{paper-divider}}
-
-{{#paper-button raised=true primary=true action="addToCart"}}Add to Cart{{/paper-button}}
+<p>
+  {{#paper-button class="add-button" raised=true primary=true action="addToCart"}}Add to Cart{{/paper-button}}
+</p>

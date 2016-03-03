@@ -5,10 +5,6 @@ export default Ember.Component.extend({
 
   quantity: 1,
 
-  init() {
-    this._super(...arguments);
-  },
-
   weight: Ember.computed('weightSelect', function() {
     if (this.get('weightSelect')) {
       return "Cardstock";

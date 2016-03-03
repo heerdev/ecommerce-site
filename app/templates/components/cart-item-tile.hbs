@@ -1,12 +1,13 @@
 <div layout-gt-md="row">
   <div flex="49">
-    {{item.product.name}}<br>
-    {{item.quantity}} {{pluralizer item.quantity item.unit}} of {{item.weight}}<br>
-    {{format-price item.price}}
+    <h3>{{item.product.name}}, {{item.quantity}} {{pluralizer item.quantity item.unit}} of {{item.weight}}</h3>
+    Quantity&nbsp;{{#paper-button icon-button=true action="decrementQuantity"}}{{paper-icon "remove"}}{{/paper-button}}
+    &nbsp;{{item.quantity}}&nbsp;{{#paper-button icon-button=true action="incrementQuantity"}}{{paper-icon "add"}}{{/paper-button}}
   </div>
-  <div flex="49">
-    {{#paper-button raised=true primary=true action="incrementQuantity"}}{{paper-icon "add"}}{{/paper-button}}
-    {{#paper-button raised=true primary=true action="decrementQuantity"}}{{paper-icon "remove"}}{{/paper-button}}
-    {{#paper-button raised=true primary=true}}Remove{{/paper-button}}
+  <div flex="49" class="item-tile-right">
+    <h3>{{format-price item.price}}</h3>
+    <p>
+      {{#paper-button icon-button=true action="removeFromCart"}}{{paper-icon "delete"}}{{/paper-button}}
+    </p>
   </div>
 </div>

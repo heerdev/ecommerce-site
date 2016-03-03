@@ -1,9 +1,9 @@
 
 {{#paper-card}}
-  {{#link-to 'product' model.bestProduct.id}}<div class="letter-background"></div>{{/link-to}}
+  {{#link-to 'product' model.bestProduct.id}}<div class="{{model.bestProduct.name}}"></div>{{/link-to}}
 
   {{#paper-card-content}}
-    <h1>{{model.bestProduct.name}} size paper</h1>
+    {{#link-to 'product' model.bestProduct.id}}<h1>{{model.bestProduct.name}} size paper</h1>{{/link-to}}
     <p>{{model.bestProduct.main_description}}</p>
   {{/paper-card-content}}
 {{/paper-card}}
@@ -13,7 +13,7 @@
     {{#paper-card flex="49"}}
       {{#link-to 'product' product.id}}<div class="{{product.name}}"></div>{{/link-to}}
       {{#paper-card-content}}
-      <h1>{{product.name}} size paper</h1>
+      {{#link-to 'product' product.id}}<h1>{{product.name}} size paper</h1>{{/link-to}}
       <p>{{product.main_description}}</p>
       {{/paper-card-content}}
     {{/paper-card}}
@@ -21,36 +21,24 @@
 </div>
 
 <div layout-gt-lg="row">
-  {{#paper-card flex="31"}}
-    <div class="letter-background">
-      <p class="card-overlay">
-        Some buttons and text
-      </p>
-    </div>
+  {{#paper-card flex="31" class="feature"}}
     {{#paper-card-content}}
-      <p>Letter size paper content</p>
+        {{paper-icon "local-shipping" size=5}}
+        <h1>Free Delivery</h1>
     {{/paper-card-content}}
   {{/paper-card}}
 
-  {{#paper-card flex="31"}}
-    <div class="letter-background">
-      <p class="card-overlay">
-        Some buttons and text
-      </p>
-    </div>
+  {{#paper-card flex="31" class="feature"}}
     {{#paper-card-content}}
-      <p>Letter size paper content</p>
+        {{paper-icon "people-outline" size=5}}
+        <h1>Family Business</h1>
     {{/paper-card-content}}
   {{/paper-card}}
 
-  {{#paper-card flex="31"}}
-    <div class="letter-background">
-      <p class="card-overlay">
-        Some buttons and text
-      </p>
-    </div>
+  {{#paper-card flex="31" class="feature"}}
     {{#paper-card-content}}
-      <p>Letter size paper content</p>
+        {{paper-icon "attach-money" size=5}}
+        <h1>Competitive Prices</h1>
     {{/paper-card-content}}
   {{/paper-card}}
 
