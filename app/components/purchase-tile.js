@@ -54,9 +54,11 @@ export default Ember.Component.extend({
       if (this.get('caseSelected')) {
         purchase.unit = this.get('product.case.name');
         purchase.price = this.get('product.case.price') * this.get('quantity');
+        purchase.price_per_quantity = this.get('product.case.price');
       } else {
         purchase.unit = this.get('product.unit.name');
         purchase.price = this.get('product.unit.price') * this.get('quantity');
+        purchase.price_per_quantity = this.get('product.unit.price');
       }
 
       this.get('shoppingCart').addToCart(purchase);

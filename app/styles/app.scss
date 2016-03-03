@@ -10,6 +10,10 @@ $envelope: url('images/envelopes.jpg');
 
 @import 'ember-paper';
 
+button {
+  padding: 5px 15px !important;
+}
+
 #item-count {
   font-size: 25px;
 }

@@ -1,9 +1,13 @@
-{{format-price shoppingCart.total}}
-
-{{#each shoppingCart.items as |purchase|}}
-  <ul>
-    <li>{{purchase.product.name}}</li>
-    <li>{{purchase.quantity}} {{pluralizer purchase.quantity purchase.unit}} of {{purchase.weight}}</li>
-    <li>{{format-price purchase.price}}</li>
-  </ul>
+{{#each shoppingCart.items as |item|}}
+{{#paper-card}}
+  {{#paper-card-content}}
+    {{cart-item-tile item=item}}
+    {{/paper-card-content}}
+  {{/paper-card}}
 {{/each}}
+
+{{#paper-card}}
+  {{#paper-card-content}}
+    Total:&nbsp;{{format-price shoppingCart.total}}
+  {{/paper-card-content}}
+{{/paper-card}}

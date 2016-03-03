@@ -1,0 +1,12 @@
+<div layout-gt-md="row">
+  <div flex="49">
+    {{item.product.name}}<br>
+    {{item.quantity}} {{pluralizer item.quantity item.unit}} of {{item.weight}}<br>
+    {{format-price item.price}}
+  </div>
+  <div flex="49">
+    {{#paper-button raised=true primary=true action="incrementQuantity"}}{{paper-icon "add"}}{{/paper-button}}
+    {{#paper-button raised=true primary=true action="decrementQuantity"}}{{paper-icon "remove"}}{{/paper-button}}
+    {{#paper-button raised=true primary=true}}Remove{{/paper-button}}
+  </div>
+</div>
