@@ -19,6 +19,15 @@
 
 {{#paper-card}}
   {{#paper-card-content}}
-    {{#paper-button class="checkout-button" raised=true primary=true}}Checkout{{/paper-button}}
+    {{#paper-button class="checkout-button" raised=true primary=true action="checkout"}}Checkout{{/paper-button}}
+    {{#if checkout}}
+      {{#if stuffInCart}}
+        {{paper-input label="Name" value=name}}
+        {{paper-input label="Address" value=address}}
+        {{paper-input label="Email" value=email}}
+
+        {{#paper-button class="checkout-button" raised=true primary=true action="submitOrder"}}Submit Order{{/paper-button}}
+      {{/if}}
+    {{/if}}
   {{/paper-card-content}}
 {{/paper-card}}
